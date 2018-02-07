@@ -1,0 +1,63 @@
+<div class="entire">
+<div class="left">
+<div class="col-lg-2 col-md-2 col-sm-2" id="sidebar">
+<div class="toggle-btn" (click)="toggleSidebar()">
+ </div>
+  <div class="heading">
+  MEN</div>
+  <div class="title">
+  Clothing
+</div>
+  <ul>
+   <li><button type="button" class="btn btn-link"(click)="getData($event)" value="1">Jackets and vests</button></li>
+   <li><button type="button" class="btn btn-link"(click)="getData($event)" value="2">T-shirts</button></li>
+   <li><button type="button" class="btn btn-link"(click)="getData($event)" value="3">Trousers</button></li>
+    <li><button type="button" class="btn btn-link"(click)="getData($event)" value="4">Shirts</button></li>
+   </ul>
+   <div class="title">
+   Accessories
+   </div>
+   <ul>
+   <li><button type="button" class="btn btn-link"(click)="getData($event)" value="5">watches</button></li>
+   <li><button type="button" class="btn btn-link"(click)="getData($event)" value="6">Bags and Trolley</button></li>
+   <li><button type="button" class="btn btn-link"(click)="getData($event)" value="7">Caps</button></li>
+   <li><button type="button" class="btn btn-link"(click)="getData($event)" value="8">Wallets</button></li>
+   </ul>
+   <div class="title">
+   Shoes
+   </div>
+   <ul>
+   <li><button type="button" class="btn btn-link"(click)="getData($event)" value="9">Tod's for ferrari</button></li>
+   <li><button type="button" class="btn btn-link"(click)="getData($event)" value="10">Sneakers Puma</button></li>
+   </ul>
+    <div class="heading">
+  WOMEN</div>
+  <div class="title">
+  Clothing
+</div>
+  <ul>
+   <li><button type="button" class="btn btn-link"(click)="getData1($event)" value="1">Jackets and vests</button></li>
+   <li><button type="button" class="btn btn-link"(click)="getData1($event)" value="2">T-shirts</button></li>
+   <li><button type="button" class="btn btn-link"(click)="getData1($event)" value="3">Trousers</button></li>
+    <li><button type="button" class="btn btn-link"(click)="getData1($event)" value="4">Shirts</button></li>
+   </ul>
+   <div class="title">
+   Accessories
+   </div>
+   <ul>
+   <li><button type="button" class="btn btn-link"(click)="getData1($event)" value="5">watches</button></li>
+   <li><button type="button" class="btn btn-link"(click)="getData1($event)" value="6">Bags and Trolley</button></li>
+   <li><button type="button" class="btn btn-link"(click)="getData1($event)" value="7">Caps</button></li>
+   <li><button type="button" class="btn btn-link"(click)="getData1($event)" value="8">Wallets</button></li>
+   </ul>
+   <div class="title">
+   Shoes
+   </div>
+   <ul>
+   <li><button type="button" class="btn btn-link"(click)="getData1($event)" value="9">Tod's for ferrari</button></li>
+   <li><button type="button" class="btn btn-link"(click)="getData1($event)" value="10">Sneakers Puma</button></li>
+   </ul>
+  </div>
+</div>
+<app-shopping-main [data]="data"></app-shopping-main>
+</div>

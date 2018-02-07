@@ -1,0 +1,27 @@
+#Shop{
+    padding-top:20px;
+    padding-bottom:50px;
+    height:auto;
+    
+}
+/*.example-card {
+  margin-bottom: 20px;
+}*/
+
+/*.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}*/
+.img-responsive{
+	padding-top:50px;
+	height:250px;
+  mix-blend-mode: multiply;
+}
+.txt{
+  padding-bottom:50px;
+}
+@media only screen and (max-width: 414px) {
+   .txt {
+        padding-bottom:0px;
+    }
+}

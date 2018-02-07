@@ -1,0 +1,39 @@
+.navbar 
+    {
+      margin-bottom:0px;
+      border-radius:0;
+      font-size:18px;
+      /*background-color:white;*/
+      background: linear-gradient(to bottom, darkred 0%);
+    }
+.entire
+  {
+    background: linear-gradient(to bottom, darkred 0%, black 100%);
+    height:2000px;
+  }
+.cart{
+  position: center;
+  padding-bottom: 3px;
+}
+.edit{
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

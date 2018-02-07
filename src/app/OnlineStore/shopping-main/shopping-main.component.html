@@ -1,0 +1,40 @@
+<div class="col-lg-10 right">
+<nav class="navbar navbar">
+  <div class="navbar-header">
+     </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <h3><font color='black'><b></b></font></h3>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+       <li>
+      <form class="form-inline"  #searchForm ="ngForm" style="padding-top:8px" role="search" (ngSubmit)="onSubmit(searchForm.value)">
+      <div class="md-form form-group">
+        <i class="fa fa-envelope prefix"></i>
+        <input class="form-control" [(ngModel)]="search" placeholder="Search" name="search" ngModel >
+    </div>
+    <div class="md-form form-group">
+    <button  mat-raised-button color="primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+   </form>
+      </li>
+      <li>
+       <button mat-button style="margin-top:8px" class="cart" ><i class="glyphicon glyphicon-shopping-cart edit" ></i>  cart</button></li>
+      </ul>
+     </div>
+     </nav>
+    <div class="mdl-card mdl-shadow--2dp demo-card-square tc" *ngFor="let items of data" >
+    <div class="mdl-card__title mdl-card--expand" >
+      <div>
+      <img src={{items.product_image}} style="height:240px;width:260px" routerLink="description"  (click)="description(items.product_id)" >
+      </div>
+    </div>
+     <h4 style="text-align:center">{{items.product_name}}</h4>
+	  <h4 style="text-align:center">{{items.price | currency}}</h4>
+    </div>
+
+
+   
+
+
+   

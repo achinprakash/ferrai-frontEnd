@@ -1,0 +1,154 @@
+<!--<div class="container">-->
+   <div class="container-fluid col-lg-12 col-md-12 col-sm-12 col-xs-12" id="background">    
+<div class="row-fluid" >
+<mat-card class=" col-lg-offset-4 col-md-offset-3 col-sm-offset-3  col-lg-4 col-md-6 col-sm-6 col-xs-12">
+
+
+       <div *ngIf ="processing">
+    <section class="example-section">
+      <mat-progress-bar class="example-margin" color="primary" mode="indeterminate">
+      </mat-progress-bar>
+    </section>
+    </div>
+
+         <div *ngIf ="!processing">
+    <section class="example-section">
+    </section>
+    </div>
+  
+      <div>
+      <h2 style="text-align:center;">Registration Form</h2>
+      </div>
+      <hr>
+
+<!--<h1 class="page-header">Register Page</h1>-->
+
+<div class ="row-fluid show-hide-message">
+  <div [ngClass]="messageClass">
+    {{ message }}
+     </div>
+
+
+<!--<form [formGroup]="form" (submit)="onRegisterSubmit(form.value)">-->
+  <form [formGroup]="form" >
+
+    
+    <div [ngClass]="{'has-error': (form.controls.fname.errors && form.controls.fname.dirty && form.controls.fname.touched), 'has-success': !form.controls.fname.errors}">
+      <mat-form-field class="example-full-width">
+      <input type="text" name="fname"  autocomplete="off" matInput placeholder="*First Name" formControlName="fname" />
+      </mat-form-field>
+      <ul class="help-block">
+        <li *ngIf="form.controls.fname.errors?.required && form.controls.fname.dirty && form.controls.fname.touched">This field is required</li>
+        <li *ngIf="form.controls.fname.errors?.minlength && form.controls.fname.dirty && form.controls.fname.touched || form.controls.fname.errors?.maxlength && form.controls.fname.dirty && form.controls.fname.touched">Minimum characters: 2 and Maximum character:20</li>
+        <li *ngIf="form.controls.fname.errors?.validatefname && form.controls.fname.dirty && form.controls.fname.touched">First Name must not have any special characters and digits </li>
+      </ul>
+    </div>
+ 
+   
+    
+    <div [ngClass]="{'has-error': (form.controls.lname.errors && form.controls.lname.dirty && form.controls.lname.touched), 'has-success': !form.controls.lname.errors}">
+      <mat-form-field class="example-full-width">
+      <input type="text" name="lname"  autocomplete="off" matInput placeholder="*Last Name" formControlName="lname" />
+      </mat-form-field >
+      <ul class="help-block">
+        <li *ngIf="form.controls.lname.errors?.required && form.controls.lname.dirty && form.controls.lname.touched">This field is required</li>
+        <li *ngIf="form.controls.lname.errors?.minlength && form.controls.lname.dirty && form.controls.lname.touched || form.controls.lname.errors?.maxlength && form.controls.lname.dirty && form.controls.lname.touched">Minimum characters: 1 and Maximum character:20</li>
+        <li *ngIf="form.controls.lname.errors?.validatelname && form.controls.lname.dirty && form.controls.lname.touched">Last Name must not have any special characters and digits</li>
+      </ul>
+    </div>
+ 
+
+
+
+    <div [ngClass]="{'has-error': (form.controls.dateOfBirth.errors && form.controls.dateOfBirth.touched), 'has-success': !form.controls.dateOfBirth.errors}">
+ <mat-form-field class="example-full-width">
+  <input   matInput [matDatepicker]="dp3" [min]="minDate" [max]="maxDate"  name="dateOfBirth" readonly formControlName="dateOfBirth" placeholder="*Date of Birth"(dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+    <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+    <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+  </mat-form-field>
+   <ul class="help-block">
+        <p *ngIf="form.controls.dateOfBirth.errors?.required && form.controls.dateOfBirth.touched"></p>
+      </ul>
+    </div>
+
+  
+  
+ 
+
+<label>Gender: </label>
+<mat-radio-group formControlName="gender" [(ngModel)]="gender">
+        <mat-radio-button value="Male"> Male </mat-radio-button>
+        <mat-radio-button value="Female"> Female </mat-radio-button>
+        <mat-radio-button value="Other"> Other </mat-radio-button>
+      </mat-radio-group>
+<!--<p>You selected: {{gender}}</p>-->
+<div>
+    <mat-form-field class="example-full-width">
+<label>Country: </label>
+  <mat-select  formControlName ="country" [(ngModel)]="country">
+     <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+<!--<p>You selected: {{country}}</p>-->
+
+    
+    <div [ngClass]="{'has-error': (form.controls.email.errors && form.controls.email.dirty && form.controls.email.touched)||(!validEmail && form.controls.email.dirty && form.controls.email.touched) , 'has-success': !form.controls.email.errors && validEmail}">
+     <mat-form-field class="example-full-width">
+      <input type="text" name="email"  autocomplete="off" matInput placeholder="*Email" formControlName="email"(blur)="checkEmail()" [(ngModel)]="email"/>
+      </mat-form-field >
+      <ul class="help-block">
+        <li *ngIf="form.controls.email.errors?.required && form.controls.email.dirty && form.controls.email.touched">This field is required</li>
+        <li *ngIf="(form.controls.email.errors?.minlength && form.controls.email.dirty && form.controls.email.touched || form.controls.email.errors?.maxlength && form.controls.email.dirty && form.controls.email.touched)">Please use between 10 and 35 characters.</li>
+        <li *ngIf="form.controls.email.errors?.validateEmail && form.controls.email.dirty && form.controls.email.touched">This must be a valid e-mail</li>
+      </ul>
+    </div>
+
+    
+    
+    <div [ngClass]="{'has-error': (form.controls.password.errors && form.controls.password.dirty && form.controls.confirm.touched), 'has-success': !form.controls.password.errors}">
+     <mat-form-field class="example-full-width">
+      <input type="password" name="password" autocomplete="off" matInput placeholder="*Password" formControlName="password" (blur) = "emptyConfirmPassword()" />
+      </mat-form-field >
+      <ul class="help-block">
+        <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty && form.controls.confirm.touched">This field is required</li>
+        <li *ngIf="form.controls.password.errors?.minlength && form.controls.password.dirty && form.controls.confirm.touched || form.controls.password.errors?.maxlength && form.controls.password.dirty && form.controls.confirm.touched">Maximum 20 character are allowed </li>
+        <li *ngIf="form.controls.password.errors?.validatePassword && form.controls.password.dirty && form.controls.confirm.touched">Password must be at least 8 characters and must contain one uppercase,one lowercase and one digit </li>
+      </ul>
+    </div>
+
+   
+    <div [ngClass]="{'has-error': (form.controls.confirm.errors && form.controls.confirm.dirty ) || (form.errors?.matchingPasswords && form.controls.confirm.dirty ), 'has-success': !form.controls.confirm.errors && !form.errors?.matchingPasswords}">
+     <mat-form-field class="example-full-width">
+      <input type="password" name="confirm"  autocomplete="off" matInput placeholder="*Confirm Password" formControlName="confirm" (blur) = "emptyConfirmPassword()" />
+     </mat-form-field>
+      <ul class="help-block">
+        <li *ngIf="form.controls.confirm.errors?.required && form.controls.confirm.dirty ">This field is required</li>
+        <li *ngIf="form.errors?.matchingPasswords && form.controls.confirm.dirty">Password do not match</li>
+      </ul>
+    </div>
+
+  
+ 
+
+  <!-- Submit Input -->
+  <!--<input [disabled]="!form.valid || processing || !validEmail " type="submit" class="btn btn-primary" value="Submit" />-->
+  <div style="text-align:center">
+  <button [disabled]="!form.valid || processing || !validEmail " style="color:white; background-color:#33ccff;  " mat-button  (click)="onRegisterSubmit()">submit</button>
+  </div>
+</form>
+</div>
+
+
+
+</mat-card>
+</div>
+</div>
+<!-- Registration Form /-->
+
+
+
+
+
+
+

@@ -1,0 +1,247 @@
+<!--<div class="container">-->
+  <div class="row">
+    <div class="col-sm-7">
+   <div class="container-fluid col-lg-12 col-md-12 col-sm-12 col-xs-12" id="body">    
+<div class="row-fluid" >
+<mat-card class=" col-lg-offset-3 col-md-offset-4 col-sm-offset-3  col-lg-8 col-md-7 col-sm-8 col-xs-12">
+
+  
+      <div>
+      <h2 style="text-align:center;">DELIVERY  ADDRESS</h2>
+      </div>
+      <hr>
+
+
+
+  <form [formGroup]="form" >
+
+    
+    <div [ngClass]="{'has-error': (form.controls.fname.errors && form.controls.fname.dirty && form.controls.fname.touched), 'has-success': !form.controls.fname.errors}">
+      <mat-form-field class="example-full-width">
+      <input type="text" #fname maxlength="20" name="fname"  autocomplete="off" matInput placeholder="*First Name" formControlName="fname" />
+      <mat-hint align="end">{{fname.value.length}} / 20</mat-hint>
+      </mat-form-field>
+      <ul class="help-block">
+        <li *ngIf="form.controls.fname.errors?.required && form.controls.fname.dirty && form.controls.fname.touched">This field is required</li>
+        <li *ngIf="form.controls.fname.errors?.minlength && form.controls.fname.dirty && form.controls.fname.touched || form.controls.fname.errors?.maxlength && form.controls.fname.dirty && form.controls.fname.touched">Minimum characters: 2 and Maximum character:20</li>
+        <li *ngIf="form.controls.fname.errors?.validatefname && form.controls.fname.dirty && form.controls.fname.touched">First Name must not have any special characters and digits </li>
+      </ul>
+    </div>
+ 
+   
+    
+    <div [ngClass]="{'has-error': (form.controls.lname.errors && form.controls.lname.dirty && form.controls.lname.touched), 'has-success': !form.controls.lname.errors}">
+      <mat-form-field class="example-full-width">
+      <input type="text"#lname maxlength="20" name="lname"  autocomplete="off" matInput placeholder="*Last Name" formControlName="lname" />
+      <mat-hint align="end">{{lname.value.length}} / 20</mat-hint>
+      </mat-form-field >
+      <ul class="help-block">
+        <li *ngIf="form.controls.lname.errors?.required && form.controls.lname.dirty && form.controls.lname.touched">This field is required</li>
+        <li *ngIf="form.controls.lname.errors?.minlength && form.controls.lname.dirty && form.controls.lname.touched || form.controls.lname.errors?.maxlength && form.controls.lname.dirty && form.controls.lname.touched">Minimum characters: 2 and Maximum character:20</li>
+        <li *ngIf="form.controls.lname.errors?.validatelname && form.controls.lname.dirty && form.controls.lname.touched">Last Name must not have any special characters and digits</li>
+      </ul>
+    </div>
+ 
+
+
+
+     <div [ngClass]="{'has-error': (form.controls.address.errors && form.controls.address.dirty && form.controls.address.touched), 'has-success': !form.controls.address.errors}">
+   <mat-form-field class="example-full-width">
+      <input  matInput #address maxlength="50" placeholder="*Address (Door no. and Street)"  name="address"  autocomplete="off"  formControlName="address">
+       <mat-hint align="end">{{address.value.length}} / 50</mat-hint>
+    </mat-form-field>
+     <ul class="help-block">
+        <li *ngIf="form.controls.address.errors?.required && form.controls.address.dirty && form.controls.address.touched">Address is required</li>
+        <li *ngIf="form.controls.address.errors?.minlength && form.controls.address.dirty && form.controls.address.touched || form.controls.address.errors?.maxlength && form.controls.address.dirty && form.controls.address.touched">Minimum characters: 3 and Maximum character:50</li>
+        <li *ngIf="form.controls.address.errors?.validateAddress && form.controls.address.dirty && form.controls.address.touched">Invalid Address.</li>
+      </ul>
+    </div>
+
+
+
+
+         <div [ngClass]="{'has-error': (form.controls.city.errors && form.controls.city.dirty && form.controls.city.touched), 'has-success': !form.controls.city.errors}">
+   <mat-form-field class="example-full-width">
+      <input  matInput #city maxlength="25" placeholder="*City"  name="city"  autocomplete="off"  formControlName="city">
+      <mat-hint align="end">{{city.value.length}} / 25</mat-hint>
+    </mat-form-field>
+     <ul class="help-block">
+        <li *ngIf="form.controls.city.errors?.required && form.controls.city.dirty && form.controls.city.touched">City is required</li>
+        <li *ngIf="form.controls.city.errors?.minlength && form.controls.city.dirty && form.controls.city.touched || form.controls.city.errors?.maxlength && form.controls.city.dirty && form.controls.city.touched">Minimum characters: 3 and Maximum character:25</li>
+        <li *ngIf="form.controls.city.errors?.validateCity && form.controls.city.dirty && form.controls.city.touched">Only space are allowed between character</li>
+      </ul>
+    </div>
+
+
+             <div [ngClass]="{'has-error': (form.controls.state.errors && form.controls.state.dirty && form.controls.state.touched), 'has-success': !form.controls.state.errors}">
+   <mat-form-field class="example-full-width">
+      <input  matInput  #state maxlength="25" placeholder="*State"  name="state"  autocomplete="off"  formControlName="state">
+       <mat-hint align="end">{{state.value.length}} / 25</mat-hint>
+    </mat-form-field>
+     <ul class="help-block">
+        <li *ngIf="form.controls.state.errors?.required && form.controls.state.dirty && form.controls.state.touched">State is required</li>
+        <li *ngIf="form.controls.state.errors?.minlength && form.controls.state.dirty && form.controls.state.touched || form.controls.state.errors?.maxlength && form.controls.state.dirty && form.controls.state.touched">Minimum characters: 3 and Maximum character:25</li>
+        <li *ngIf="form.controls.state.errors?.validateState && form.controls.state.dirty && form.controls.state.touched">Only Space are allowed between character</li>
+      </ul>
+    </div>
+
+
+
+
+ 
+<div [ngClass]="{'has-error': (form.controls.postalCode.errors && form.controls.postalCode.dirty && form.controls.postalCode.touched), 'has-success': !form.controls.postalCode.errors}">
+  <mat-form-field class="example-full-width" >
+      <input matInput #postalCode maxlength="6" placeholder="*Pincode" value="" name="postalCode"  autocomplete="off"  formControlName="postalCode">
+      <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+    </mat-form-field>
+    <ul class="help-block">
+        <li *ngIf="form.controls.postalCode.errors?.required && form.controls.postalCode.dirty && form.controls.postalCode.touched">Postal code is required</li>
+        <li *ngIf="form.controls.postalCode.errors?.minlength && form.controls.postalCode.dirty && form.controls.postalCode.touched" >Minimum character: 6 </li>
+        <li *ngIf="form.controls.postalCode.errors?.validatePincode && form.controls.postalCode.dirty && form.controls.postalCode.touched">Invalid Postalcode</li>
+      </ul>
+</div>
+
+    
+
+<div>
+    <mat-form-field class="example-full-width">
+  <mat-select  formControlName ="country" [(ngModel)]="country">
+     <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+
+
+  <div style="text-align:center">
+  <button [disabled]="!form.valid || processing  " style="color:white; background-color:#33ccff;  " mat-button  (click)="onSubmit()">Deliver here</button>
+
+  
+  </div>
+</form>
+
+</mat-card>
+</div>
+
+</div>
+
+  </div>
+  
+    <div class="col-sm-5">
+
+  <div class="container-fluid col-lg-12 col-md-12 col-sm-12 col-xs-12" id="body">    
+<div class="row-fluid" >
+
+<table>
+  <tr class="col-lg-12">
+<!--<mat-card >
+<div><h2 style="text-align:center;">PRICE DETAIL</h2></div>
+  <hr>
+  <tr>
+    <td>Price({{qunatity}}) item</td> <td>  -------   </td><td>10000</td>
+  </tr>
+</mat-card>-->
+<mat-card id="payment" style="display:block" class="example-card">
+  <!--class=" col-lg-offset-1 col-md-offset-3 col-sm-offset-3  col-lg-9 col-md-6 col-sm-6 col-xs-12"-->
+  <div><h2 style="text-align:center;">PRICE DETAIL</h2></div>
+  <hr>
+
+  <mat-card-content>
+  <table>
+    <tr>
+      <td>Price</td><td>${{total}}</td>
+    </tr>
+
+    <tr>
+      <td>delivery</td><td>$2</td>
+    </tr>
+    </table>
+     <hr>
+
+<table>
+    <tr>
+      <th>Total price</th><th>${{total+ 2}}</th>
+    </tr>
+</table>
+
+  </mat-card-content>
+
+
+
+</mat-card>
+</tr>
+</table>
+
+<br>
+
+<table id="payment" *ngIf = "display">
+  <tr class="col-lg-12">
+<mat-card  class="example-card">
+ 
+  <div><h2 style="text-align:center;">PAYMENT OPTIONS</h2></div>
+  <hr>
+
+    <div>
+      <mat-radio-group  [(ngModel)]="selectedpayment">
+        <mat-radio-button value="COD">Cash on Delivery </mat-radio-button>
+           
+        <br>
+        <mat-radio-button value="internet">Internet banking</mat-radio-button>
+        <br>
+
+
+        <div *ngIf = "selectedpayment=='internet'">
+    <mat-form-field class="example-full-width">
+  <mat-select   [(ngModel)]="internetBankingDef">
+     <mat-option *ngFor="let bank of internetBanking" [value]="internetBankingDef">{{bank}}</mat-option>
+  </mat-select>
+    </mat-form-field>
+      </div>
+
+
+       
+        <mat-radio-button value="card">Card Payment</mat-radio-button>
+        <br>
+
+        <div *ngIf = "selectedpayment=='card'">
+    <mat-form-field class="example-full-width">
+  <mat-select   [(ngModel)]="cardDef">
+     <mat-option *ngFor="let card of cardBanking" [value]="cardDef">{{card}}</mat-option>
+  </mat-select>
+    </mat-form-field>
+      </div>
+
+         <mat-radio-button value="wallet">E-Wallet</mat-radio-button>
+        <br>
+      </mat-radio-group>
+
+        <div *ngIf = "selectedpayment=='wallet'">
+    <mat-form-field class="example-full-width">
+  <mat-select   [(ngModel)]="walletDef">
+     <mat-option *ngFor="let wallet of wallets" [value]="walletDef">{{wallet}}</mat-option>
+  </mat-select>
+    </mat-form-field>
+      </div>
+
+    </div>
+
+    <br>
+     <div style="text-align:center" *ngIf="selectedpayment=='COD'" >
+  <button  style="color:white; background-color:#33ccff;  " mat-button  (click)="order()">order</button>
+  </div>
+
+   <div style="text-align:center" *ngIf="selectedpayment=='internet'|| selectedpayment=='card' || selectedpayment=='wallet'" >
+  <button  style="color:white; background-color:#33ccff;  " mat-button  (click)="pay()">PAY</button>
+  </div>
+
+
+
+</mat-card>
+  
+</table>
+</div>
+</div>
+
+
+    </div>
+  </div>
+

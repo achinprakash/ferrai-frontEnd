@@ -1,0 +1,68 @@
+
+  <div class="container-fluid" >
+    <div class="row">
+    <div class="col-lg-2 left">
+      
+      
+          <div class="mdl-card mdl-shadow--2dp demo-card-square tc" >
+          <div class="mdl-card__title mdl-card--expand" >
+         <div>
+            <img alt="Image loading..." src={{product_image}} style="height:260px;width:260px;padding-left:22px;">
+         </div>
+     </div>
+     <button  mat-raised-button color="primary" (click)="addToCart(product_id)">Add To Cart</button>
+     </div>
+     
+  </div>
+            <div class="col-lg-10 right">
+              <div class="container-fluid">
+              <div class="col-lg-9">
+                <div class="right-right"><button  mat-raised-button routerLink="cartitems" ><span class="glyphicon glyphicon-shopping-cart"></span><b>Cart</b></button></div>
+               <div class="name">
+                {{product_name}}
+               </div>
+               <br>
+              <div class="editdetails">
+               <div style="color:royalblue">
+               Description:</div>
+               {{product_description}}
+              </div>
+               <div *ngIf="processing" style="padding-left:350px">
+                  <mat-spinner diameter=60></mat-spinner>
+                </div>
+              <br>
+              <div class="editdetails">
+                <div class="row">
+                <div class="col-lg-1 addcolor">
+                Color:
+                </div>
+                <div class="col-lg-11">
+                {{color}}
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="editdetails">
+                <div class="row">
+                <div class="col-lg-1 addcolor">
+               Price:
+                </div>
+                <div class="col-lg-11">
+                {{price| currency}}
+                  </div>
+                </div>
+              </div>
+             </div>
+             </div>
+             <div class="back"><p>
+             <button mat-raised-button   routerLink="../"><span class="glyphicon glyphicon-shopping-cart" style="position:center"></span><span> </span>Continue Shopping</button>
+              <button mat-raised-button   routerLink="cartitems" style="color:green"><span> </span>Proceed >>></button>
+               </p> 
+            </div>
+            </div>
+    
+      </div>
+       
+  </div>
+
+ 

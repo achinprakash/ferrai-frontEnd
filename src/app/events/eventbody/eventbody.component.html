@@ -1,0 +1,40 @@
+<span *ngIf="loading == true">
+  
+  <!--<img src = "../../assets/images/untitled-9.gif" style="height:150px;width:150px;margin-left:48%;margin-top:200px;margin-bottom:250px;">-->
+  
+  <mat-spinner style="height:150px;width:150px;margin-left:48%;margin-top:200px;margin-bottom:350px;"></mat-spinner>
+  
+  </span>
+
+
+<div *ngIf="loading == false"  class="bg">
+    <div class="container "  >
+        <div *ngFor=" let item of data ">
+            <div (click)="getData(item.upcomingeventid)">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+
+
+                    <div class="grid">
+                        <figure class="effect-julia ">
+                            <img  src="\assets\eventsimages\{{item.eventImage}}">
+                            <figcaption>
+                                <h2><b>{{item.country}} grandprix</b> </h2>
+                                <div style="height:70%;">
+                                    <p>Racer 1: {{item.racer1}}</p>
+                                    <br>
+
+                                    <p> Racer2: {{item.racer2}} </p>
+                                    <br>
+                                </div>
+
+
+                                
+
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

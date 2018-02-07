@@ -1,0 +1,15 @@
+.entire{
+    height:720px;
+     background-color: #F7F7F7;
+}
+.button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.buynow{
+    color: green;
+}
+.playsymbol{
+    
+}

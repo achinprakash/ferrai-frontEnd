@@ -1,0 +1,78 @@
+<div class="container-fluid col-lg-12 col-md-12 col-sm-12 col-xs-12" id="background">    
+
+<div class="row-fluid">
+<mat-card class=" col-lg-offset-4 col-md-offset-3 col-sm-offset-3  col-lg-4 col-md-6 col-sm-6 col-xs-12">
+
+  
+        <div *ngIf ="processing">
+    <section class="example-section">
+      <mat-progress-bar class="example-margin" color="primary" mode="indeterminate">
+      </mat-progress-bar>
+    </section>
+    </div>
+
+         <div *ngIf ="!processing">
+    <section class="example-section">
+    </section>
+    </div>
+  
+      <div>
+      <h2 style="text-align:center;">Login Form</h2>
+      </div>
+      <hr>
+
+<div class ="row-fluid show-hide-message">
+  <div [ngClass]="messageClass">
+    {{ message }}
+     </div>
+
+
+<div >
+    <form [formGroup]="form" >
+
+
+
+  <div [ngClass]="{'has-error': (form.controls.email.errors && form.controls.email.dirty) , 'has-success': !form.controls.email.errors }">
+     <mat-form-field class="example-full-width">
+      <input type="text" name="email"  autocomplete="off" matInput placeholder="*Email" (blur)="checkEmail()" (keypress)="keyDown($event)" formControlName="email" [(ngModel)]="email"/>
+      </mat-form-field >
+      <ul class="help-block">
+        <!--<li *ngIf="form.controls.email.errors?.required && form.controls.email.dirty">Email-id is required</li>-->
+        <!--<li *ngIf="(form.controls.email.errors?.minlength && form.controls.email.dirty || form.controls.email.errors?.maxlength && form.controls.email.dirty)">Minimum characters: 5 and Maximum characters:35</li>
+        <li *ngIf="form.controls.email.errors?.validateEmail && form.controls.email.dirty">This must be a valid e-mail</li>-->
+      </ul>
+    </div>
+
+
+   
+    <div [ngClass]="{'has-error': (form.controls.password.errors && form.controls.password.dirty), 'has-success': !form.controls.password.errors}">
+     <mat-form-field class="example-full-width">
+      <input type="password" name="password" autocomplete="off" matInput placeholder="*Password" formControlName="password" />
+      </mat-form-field >
+      <ul class="help-block">
+        <!--<li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">Password is required</li>-->
+
+      </ul>
+    </div>
+
+  
+  <br>
+  
+    <div >
+    <a  routerLink="register" >SignUp?</a>
+    <button [disabled]="!form.valid || processing" style="color:white; background-color:#33ccff; position: absolute; right:5% " mat-button (click)="onLogin(form.value)" >Login</button><br><br>
+    </div>
+    </form>
+    </div>
+    </div>
+
+  
+
+    <hr>
+    <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-10 col-md-10 col-sm-10 col-xs-10 ">
+    <button style="color:white; background-color:red;" mat-button  class="example-full-width" (click)="onGoogleLogin()">Google</button><br><br>
+    <button style="color:white; background-color:blue;" mat-button  class="example-full-width" (click)="onFacebookLogin()">Facebook</button>
+    </div>
+</mat-card>
+</div>
+</div>

@@ -1,0 +1,31 @@
+#background{
+    /*background-image: url(../../../assets/images/login.jpg);*/
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color:#f7f7f7;
+    height: 83.9vh;
+}
+
+.row-fluid {
+    margin-top: 3%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.example-section {
+  /*display: flex;
+  align-content: center;
+  align-items: center;
+  /*height: 30px;*/
+}
+
+.blue-snackbar {
+  background: #2196F3;
+}
+
+
+
+

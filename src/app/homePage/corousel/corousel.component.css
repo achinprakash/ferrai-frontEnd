@@ -1,0 +1,13 @@
+
+.slider-size {
+height: 590px; /* This is your slider height */
+}
+@media only screen and (max-width: 414px) {
+.slider-size {
+height: 510px; /* This is your slider height */
+}
+}
+.carousel {
+width:100%; 
+margin:0 auto; /* center your carousel if other than 100% */ 
+}

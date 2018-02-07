@@ -1,0 +1,29 @@
+<mat-toolbar style="background-color:#1a1a1a;" role="header">
+  <mat-toolbar-row>
+    <span><button style="position:absolute; left:0%;" routerLink="home" style="color:white;" mat-button>Ferrari Fan Club</button></span>
+    <span class="example-fill-remaining-space"></span>
+  <!--<div style="position:absolute; right:1%;">-->
+  <div *ngIf="!sessionmanagement; else logoutblock">
+  <button  routerLink="login" style="color:white;"mat-button>LOGIN/SIGNUP</button>
+  </div>
+  <ng-template #logoutblock>
+  <button routerLink="events" style="color:white;"mat-button>EVENTS</button>
+  <button routerLink="history" style="color:white;"mat-button>HISTORY</button>
+  <button routerLink="drivers" style="color:white;"mat-button>DRIVERS</button>
+  <button routerLink="photo" style="color:white;"mat-button>PHOTO</button>
+  <button routerLink="video" style="color:white;"mat-button>VIDEO</button>
+  <button routerLink="shop" style="color:white;"mat-button>SHOP</button>
+  <div class="btn-group">
+     <a  class="dropdown-toggle" data-toggle="dropdown" >
+       <button style="color:white;" mat-button >{{userName}}</button>
+       <!--<span class="glyphicon glyphicon-user"></span> -->
+     </a>
+     <div class="dropdown-menu" style="background-color:grey; text-align:center;">
+        <button  style="color:black; width:100%" mat-button routerLink="edit-profile">EDIT PROFILE</button><br>
+        <button style="color:black; width:100%" mat-button routerLink="home" (click)=logOut()>LOGOUT</button>
+     </div>
+  </div>
+  </ng-template>
+  <!--</div>-->
+  </mat-toolbar-row>
+</mat-toolbar>

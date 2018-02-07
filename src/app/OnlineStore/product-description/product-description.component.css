@@ -1,0 +1,58 @@
+.left
+{
+ float:left;
+ height:750px;
+ width:40%;
+ padding-top:78px;
+ padding-left:18%;
+ 
+}
+.editimage
+{
+ padding-top :45px;
+ padding-left:30px;
+}
+.right
+{
+ float:right;
+ height:750px;
+ width:60%;
+ padding-top:25px;
+
+}
+.name
+{
+    padding-top:50px;
+    text-align: left;
+    font-size: 23px;
+    color: royalblue;   
+}
+.editdetails
+{
+   text-align:left;
+   font-size:18px;
+   color:black;
+}
+
+.entire
+{
+ height:760px;
+  background-color: #F7F7F7;
+}
+
+.blue-snackbar {
+  background: #2196F3;
+}
+
+.right-right{
+  float:right;
+}
+.back{
+  padding-top: 25px;
+  padding-left: 310px; 
+}
+.addcolor{
+  color:royalblue;
+}
+
+

@@ -1,0 +1,110 @@
+<!--<div class="example-container mat-elevation-z8">
+
+  <mat-table *ngFor="let item of data1">
+
+    
+    <ng-container matColumnDef="circuit">
+      <mat-header-cell *matHeaderCellDef>  {{item.ciruit}}  </mat-header-cell>
+      <mat-cell *matCellDef="let element"> </mat-cell>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="team1">
+      <mat-header-cell *matHeaderCellDef>  {{item.team1}} <br> {{item.team2}} <br> {{item.team3}} </mat-header-cell>
+      <mat-cell *matCellDef="let element">  </mat-cell>
+    </ng-container>
+
+       <ng-container matColumnDef="year">
+      <mat-header-cell *matHeaderCellDef> {{item.year}} </mat-header-cell>
+      <mat-cell *matCellDef="let element">  </mat-cell>
+    </ng-container>
+
+    
+<ng-container matColumnDef="winner3">
+      <mat-header-cell *matHeaderCellDef> {{item.winner1}}<br> {{item.winner2}} <br> {{item.winner3}} </mat-header-cell>
+      <mat-cell *matCellDef="let element">  </mat-cell>
+    </ng-container>
+
+ 
+    <mat-header-row *matHeaderRowDef="displayedRaces"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedRaces;"></mat-row>
+  </mat-table>
+</div>-->
+
+<span *ngIf = "loading == true">
+  
+  <!--<img src = "../../assets/images/untitled-9.gif" style="height:150px;width:150px;margin-left:48%;margin-top:200px;margin-bottom:250px;">-->
+  
+  <mat-spinner style="height:150px;width:150px;margin-left:48%;margin-top:200px;margin-bottom:350px;"></mat-spinner>
+  
+  </span>
+<div *ngIf = "loading == false" class="container-fluid bg" style="height:650px"  >
+
+  <!--<div class="parallax"></div>-->
+
+<!--<div style="height:1000px;background-color:red;font-size:36px">
+This div is just here to enable scrolling.
+Tip: Try to remove the background-attachment property to remove the scrolling effect.
+</div>-->
+
+
+
+
+             
+  <!--<table class="table table-bordered table-striped table-hover" style="margin-bottom:250px">
+  
+      <tr style = "background:#bcd">
+        <th >Year</th>
+        <th>Circuit</th>
+        <th>Winners</th>
+        <th>Teams</th>
+      </tr>
+    
+      <tr *ngFor="let item of data1" align="center">
+        <td style="padding:30px">{{item.year}}</td>
+        <td style="padding:30px">{{item.ciruit}}</td>
+        <td >{{item.winner1}}<br> {{item.winner2}} <br> {{item.winner3}}</td>
+        <td> {{item.team1}} <br> {{item.team2}} <br> {{item.team3}}</td>
+        
+      </tr>
+    
+  </table>-->
+<!--<div class="parallax"></div>-->
+
+
+<div>
+<section >
+  
+  <!--for demo wrap-->
+  <h1>{{event1}}</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0" >
+      <thead>
+        <tr>
+          <th >Year</th>
+        <th>Circuit</th>
+        <th>Winners</th>
+        <th>Teams</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+         <tr *ngFor="let item of data1" align="center">
+        <td style="padding:30px">{{item.year}}</td>
+        <td style="padding:30px">{{item.ciruit}}</td>
+        <td >{{item.winner1}}<br> {{item.winner2}} <br> {{item.winner3}}</td>
+        <td> {{item.team1}} <br> {{item.team2}} <br> {{item.team3}}</td>
+        
+      </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+</section>
+</div>
+
+</div>

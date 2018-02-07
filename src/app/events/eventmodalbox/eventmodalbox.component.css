@@ -1,0 +1,20 @@
+.modal-content{
+color:white;
+}
+
+.modal-dialog{
+  
+  margin-top: 200px;
+}
+
+
+.img1
+{
+    
+background-image: url("/assets/eventsimages/5.jpg");
+
+}
+
+/*#background1{
+background: linear-gradient(to bottom, darkred 0%, black 150%);
+}*/

@@ -1,0 +1,80 @@
+<span *ngIf="loading == true">
+  
+  <!--<img src = "../../assets/images/untitled-9.gif" style="height:150px;width:150px;margin-left:48%;margin-top:200px;margin-bottom:250px;">-->
+  
+  <mat-spinner style="height:150px;width:150px;margin-left:48%;margin-top:200px;margin-bottom:350px;"></mat-spinner>
+  
+  </span>
+
+
+
+<!--<div class="container">
+            <div class="row">
+              
+            <div class="col-md-6" *ngFor="let i of data">
+                <div class="lib-panel">
+                    <div class="row box-shadow" style="height:250px">
+                        <div class="col-md-6">
+            <video controls class="vedio" style="width:220px;height:250px">
+    <source src="https://ferrari-cdn.thron.com/static/California_t_lancio-ufficiale_YT-2000_UWEQPO.mp4?xseo=" type="video/mp4">
+</video>
+                            
+                </div>
+                        <div class="col-md-6">
+                            <div class="lib-row lib-header">
+                                EXCLUSIVE VIDEO
+                                <div class="lib-header-seperator"></div>
+                            </div>
+                            <div class="lib-row lib-desc">
+                             <b>  {{i.videoDescription}} </b>
+                            
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+              
+            </div>
+             
+            
+        </div>
+</div>-->
+
+
+<div class="row" *ngFor="let i of data">
+  <div id="Video" class="container-fluid">
+  <div class="col-sm-12">
+  <div>
+    <h1 style="color:red;font-size:30px;text-align:center;padding-bottom:50px">{{i.videoTitle}}</h1>
+  </div>
+    </div>
+      <div class="col-sm-6" style="padding-bottom:20px;">
+	<!--<iframe height="345" src="https://ferrari-cdn.thron.com/static/California_t_lancio-ufficiale_YT-2000_UWEQPO.mp4?xseo=">
+
+</iframe>-->
+<video controls class="vedio">
+    <source src={{i.videoUrl}} type="video/mp4">
+</video>
+    </div>
+    <div class="col-sm-6">
+      <div class="row"></div>
+      <div class="col-sm-12"></div>
+      <div class="col-sm-12"></div>
+      <div class="col-sm-12"></div>
+      <div class="col-sm-12">		
+      <p style="color:black;font-size:18px;text-align:justify;">{{i.videoDescription}}
+    </p>
+</div>
+
+      </div>
+
+    
+</div>
+</div>
+
+
+
+
+
+
+

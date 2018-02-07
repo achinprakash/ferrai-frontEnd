@@ -1,0 +1,199 @@
+<span *ngIf="loading == true">
+  
+  <!--<img src = "../../assets/images/untitled-9.gif" style="height:150px;width:150px;margin-left:48%;margin-top:200px;margin-bottom:250px;">-->
+  
+  <mat-spinner style="height:150px;width:150px;margin-left:48%;margin-top:200px;margin-bottom:350px;"></mat-spinner>
+  
+  </span>
+
+
+<div *ngIf="loading == false"  id="background1">
+<br>
+<br>
+<br>
+<div class="container ctn">
+		
+<div class="row">
+    <div class="col-sm-4 col-lg-4 col-sm-3" *ngFor="let i of data">
+			
+			<div class="content">
+				
+				<div class="grid">
+					<figure class="effect-julia">
+						<img src={{i.racerimage}} class="object" />
+						<figcaption>
+							<h3>{{i.racername}}</h3>
+							<div>
+								<p> <button mat-button color="primary" class="btn" data-toggle="modal" data-target="#myModal" (click)="show(i.racerid)">DETAILS</button>
+                </p>
+								<p><button mat-button color="primary" class="btn" data-toggle="modal" data-target="#myModal1"(click)="show(i.racerid)" >STASTISTICS</button>
+</p>
+							
+							</div>
+						
+						</figcaption>			
+					</figure>
+					
+				</div>
+			</div>
+      	</div>
+			</div>
+			
+		</div>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+</div>
+
+
+
+
+
+
+
+<div class="modal fade md" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content mc">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">{{member[0].racername}}</h4>
+				</div>
+
+				<div class="modal-body mb">
+				          <div class="container-fluid">    
+  <div class="row">
+    <div class="col-sm-4">
+          <img src={{member[0].racerimage}} class="img-responsive ir"   alt="Image">
+         </div>
+         <div class="col-sm-8">  
+            <table class="table table-hover table-inverse table">
+  <tbody>
+    
+    <tr>
+      <td>PLACE OF BIRTH</td>
+      <td>{{member[0].placeOfBirth}}</td>
+    </tr>
+    <tr>
+      <td>DATE OF BIRTH</td>
+      <td>{{member[0].dateOfBirth|date}}</td>
+    </tr>
+     <tr>
+      <td>AGE</td>
+      <td>{{member[0].age}}</td>
+    </tr>
+      <tr>
+      <td>UNIQUE RECORDS</td>
+      <td>{{member[0].uniquerecords}}</td>
+    </tr>
+  </tbody>
+</table> 
+          </div> 
+          </div>
+          </div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-dialog" data-dismiss="modal">CLOSE</button>
+				</div>
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
+<div class="modal fade md" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content mc1">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">{{member[0].racername}}</h4>
+				</div>
+        <div class="modal-body mb">
+          <table class="table table-hover table-inverse table">
+  <tbody>
+    <tr>
+      <td>RACES</td>
+      <td>{{member[0].races}}</td>
+    </tr>
+    <tr>   
+      <td>POINTS</td>
+      <td>{{member[0].points}}</td>
+    </tr>
+    <tr>    
+      <td>FASTEST</td>
+      <td>{{member[0].fastest}}</td>
+    </tr>
+     <tr>    
+      <td>LAPS</td>
+      <td>{{member[0].laps}}</td>
+    </tr>
+     <tr>     
+      <td>POLES</td>
+      <td>{{member[0].poles}}</td>
+    </tr>
+  </tbody>
+</table>
+ </div> 
+        
+      <div class="modal-footer ">
+<div class="border">
+<ul class="nav nav-pills">
+    <li class="active"><a data-toggle="tab" href="#home" style="font-size:15px">Position-wise Championships</a></li>
+    <li><a data-toggle="tab" href="#menu1" style="font-size:15px">Year-wise Championships</a></li>
+  </ul>
+        <div class="tab-content tc">
+    <div id="home" class="tab-pane fade in active">
+ <table class="table table-striped table-inverse sec">
+  <thead>
+    <tr>
+      <th>position</th>
+      <th>1st</th>
+      <th>2nd</th>
+      <th>3rd</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><b>Victories</b></th>
+      <td>{{member[0].first}}</td>
+      <td>{{member[0].second}}</td>
+      <td>{{member[0].third}}</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    <div id="menu1" class="tab-pane fade tc">
+      <table class="table table-striped table-inverse sec">
+  <thead>
+    <tr>
+      <th>Years</th>
+      <th>2010</th>
+      <th>2011</th>
+      <th>2012</th>
+      <th>2013</th>
+      <th>2014</th>
+      <th>2015</th>
+      <th>2016</th>
+      <th>2017</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><b>Position</b></th>
+      <td>{{member[0].y2010}}</td>
+      <td>{{member[0].y2011}}</td>
+      <td>{{member[0].y2012}}</td>
+      <td>{{member[0].y2013}}</td>
+      <td>{{member[0].y2014}}</td>
+      <td>{{member[0].y2015}}</td>
+      <td>{{member[0].y2016}}</td>
+      <td>{{member[0].y2017}}</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+</div>   
+        </div>
+<button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
+        </div>
+            </div>
+          </div>
+
+	<!--<div *ngIf="loading" class="alert alert-info">
+    Loading......Please wait!
+	</div>-->
